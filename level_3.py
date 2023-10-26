@@ -58,4 +58,29 @@ TIMED_LOOP = 10
 canvas.create_rectangle(0, 600, SCREEN_WIDTH, 650, fill="black", tags="PLATFORM")
 canvas.create_rectangle(1400,1, SCREEN_WIDTH, 650, fill="black", tags="PLATFORM")
 canvas.create_rectangle(0,1, SCREEN_WIDTH, 2, fill="black", tags="PLATFORM")
+
+stone_first = Image.open('images/level_3-images/stone.png')
+stone_first_size = stone_first.resize((200,140))
+show_stone_first = ImageTk.PhotoImage(stone_first_size)
+canvas.create_image(180, 285, image=show_stone_first, tags="PLATFORM")
+
+stone_second = Image.open('images/level_3-images/stone.png')
+stone_second_size = stone_second.resize((200, 180))
+show_stone_second = ImageTk.PhotoImage(stone_second_size)
+canvas.create_image(500,500, image=show_stone_second, tags="PLATFORM")
+
+stone_third = Image.open('images/level_3-images/stone.png')
+stone_third_size = stone_third.resize((200, 140))
+show_stone_third = ImageTk.PhotoImage(stone_third_size)
+canvas.create_image(740,350, image=show_stone_third, tags="PLATFORM")
+
+stone_four = Image.open('images/level_3-images/stone.png')
+stone_four_size = stone_four.resize((300, 140))
+show_stone_four = ImageTk.PhotoImage(stone_four_size)
+canvas.create_image(1010,260, image=show_stone_four, tags="PLATFORM")
+
+stone_five = Image.open('images/level_3-images/stone.png')
+stone_five_size = stone_five.resize((200, 180))
+show_stone_five = ImageTk.PhotoImage(stone_five_size)
+canvas.create_image(1250,500, image=show_stone_five, tags="PLATFORM")
 window.mainloop()
