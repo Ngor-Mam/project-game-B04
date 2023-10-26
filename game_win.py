@@ -36,3 +36,8 @@ score_background_open = Image.open('images/game_win-images/background_score.png'
 score_background_size = score_background_open.resize((450,70))
 show_score_background = ImageTk.PhotoImage(score_background_size)
 canvas.create_image(690,350,image=show_score_background)
+
+star_background_open = Image.open('images/game_win-images/background_score.png')
+star_background_size = star_background_open.resize((340,70))
+show_star_background = ImageTk.PhotoImage(star_background_size)
+canvas.create_image(690,450,image=show_star_background)
