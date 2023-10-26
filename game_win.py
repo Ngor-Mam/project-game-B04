@@ -46,3 +46,13 @@ star1_open = Image.open('images/game_win-images/star.png')
 star1_size = star1_open.resize((85,85))
 show_star1 = ImageTk.PhotoImage(star1_size)
 canvas.create_image(590,450,image=show_star1)
+
+star2_open = Image.open('images/game_win-images/star.png')
+star2_size = star2_open.resize((85,85))
+show_star2 = ImageTk.PhotoImage(star2_size)
+canvas.create_image(680,450,image=show_star2)
+#------star3------
+star3_open = Image.open('images/game_win-images/star.png')
+star3_size = star3_open.resize((85,85))
+show_star3 = ImageTk.PhotoImage(star3_size)
+canvas.create_image(780,450,image=show_star3)
