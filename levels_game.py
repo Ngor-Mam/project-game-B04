@@ -62,3 +62,20 @@ def link_levl1():
 button = tk.Button(frame, text="level One", command=link_levl1, bg="white", fg="black", font=("bold", 20))
 button.place(x = 275, y = 165)
 windows.resizable(0,0)
+
+def link_levl2():
+    print("Button clicked!")
+    windows.destroy()
+    os.system("python level_2.py") 
+button = tk.Button(frame, text="level Two", command=link_levl2, bg="white", fg="black", font=("bold", 20))
+button.place(x= 550,y=165)
+windows.resizable(0,0)
+
+def link_level3():
+    print("Button clicked!")
+    windows.destroy()
+    os.system("python level_3.py") 
+button = tk.Button(frame, text="level Three", command=link_level3, bg="white", fg="black", font=("bold", 20))
+button.place(x= 857,y=165)
+windows.resizable(0,0)
+windows.mainloop()
