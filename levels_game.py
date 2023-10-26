@@ -20,3 +20,11 @@ bg_image = Image.open("images/levels_game-images/background_level.jpg")
 bg_image_size = bg_image.resize((windows_width,windows_height))
 background = ImageTk.PhotoImage(bg_image_size)
 background_level = canvas.create_image(0, 0, image=background,anchor='nw')
+
+def link_main():
+    print("Button clicked!")
+    windows.destroy()
+    os.system("python main.py")
+button = tk.Button(frame, text="Back", command=link_main, bg="green", fg="white", font=("bold", 30))
+button.place(x = 30, y = 30)
+windows.resizable(0,0)
