@@ -31,3 +31,8 @@ character = Image.open('images/game_over-images/character.png')
 character_size = character.resize((300,600))
 show_character = ImageTk.PhotoImage(character_size)
 canvas.create_image(200,350,image=show_character)
+
+score_bg = Image.open('images/game_over-images/background_score.png')
+score_bg_size = score_bg.resize((450,70))
+show_score_bg = ImageTk.PhotoImage(score_bg_size)
+canvas.create_image(690,350,image=show_score_bg)
