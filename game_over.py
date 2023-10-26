@@ -26,3 +26,8 @@ over_text = Image.open('images/game_over-images/game_over_text.png')
 text_size = over_text.resize((650,350))
 show_text = ImageTk.PhotoImage(text_size)
 canvas.create_image(700,170,image=show_text)
+
+character = Image.open('images/game_over-images/character.png')
+character_size = character.resize((300,600))
+show_character = ImageTk.PhotoImage(character_size)
+canvas.create_image(200,350,image=show_character)
