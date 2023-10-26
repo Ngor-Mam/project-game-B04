@@ -50,4 +50,7 @@ canvas.create_text(790,430, text=".   R = go right", font=("Robus",15,"bold"), f
 canvas.create_text(783,460, text=".   L = go left", font=("Robus",15,"bold"), fill="black")
 canvas.create_text(799,490, text=".   Space = jump", font=("Robus",15,"bold"), fill="black")
 
-#
+def play_sound():
+    winsound.PlaySound('level_sound/sound_bg2.wav', winsound.SND_FILENAME + winsound.SND_LOOP)
+sound_thread = threading.Thread(target=play_sound)
+sound_thread.start()
