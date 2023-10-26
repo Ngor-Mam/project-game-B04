@@ -92,3 +92,6 @@ canvas.create_text(600,350,text="Total score: 20 ",font=("Robus", 25, "bold"),fi
 canvas.create_text(1110,330,text="High score: 20 ",font=("Robus", 22, "bold"),fill="white")
 canvas.create_text(1090,400,text="Medium: 10",font=("Robus", 22, "bold"),fill="white")
 canvas.create_text(1060,470,text="Low: 6 ",font=("Robus", 22, "bold"),fill="white")
+
+window.resizable(0,0)
+window.mainloop()
