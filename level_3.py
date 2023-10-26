@@ -27,8 +27,9 @@ canvas.create_image(50,50,image=btn)
 def button_click():
     print("Button clicked!")
     window.destroy()
-    os.system("python levels_game.py") 
+    os.system("python levels_game.py")  # Replace "animetion.py" with the correct file path if needed
 button = tk.Button(frame, image=btn, command=button_click,bg="black")
+button.place(x=10, y=10)
 
 board_score = Image.open("images/level_3-images/background_score.png")
 board_score_size = board_score.resize((510,60))
