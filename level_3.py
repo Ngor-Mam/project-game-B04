@@ -14,8 +14,15 @@ frame = tk.Frame(window, width=window_width, height=window_height,)
 frame.pack()
 canvas = tk.Canvas(frame, width=window_width, height=window_height,)
 canvas.pack()
+
 backgroung_level3 = Image.open('images/level_3-images/background_level3.png')
 backgroung_level3_size = backgroung_level3.resize((window_width, window_height))
 show_backgrund_level3 = ImageTk.PhotoImage(backgroung_level3_size)
 canvas.create_image(0, 0, image=show_backgrund_level3,anchor="nw" )
+
+button_back = Image.open('images/level_3-images/button_back.png')
+button_back_size = button_back.resize((70,70))
+btn = ImageTk.PhotoImage(button_back_size)
+canvas.create_image(50,50,image=btn)
+
 window.mainloop()
