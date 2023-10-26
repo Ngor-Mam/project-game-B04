@@ -76,6 +76,10 @@ stone5_size = stone5.resize((300, 50))
 show_stone5= ImageTk.PhotoImage(stone5_size)
 stone5_size_position = canvas.create_image(1150, 230, image=show_stone5,tags="PLATFORM")
 
+coin = Image.open("images/level-1-images/coin.png")
+coin_size = coin.resize((40, 40))
+coin1 = ImageTk.PhotoImage(coin_size)
+
 coin_positions = [(300, 480),(350, 480),(400, 480),
  (500, 320),(550, 320),(600, 320),
 (600, 105),(650, 105),(700, 105),
@@ -95,17 +99,20 @@ JUMP_FORCE = 30
 SPEED = 5
 TIMED_LOOP = 10
 
-# ------------- Variables ---------------------
+score_count = 0
+score_label = tk.Label(frame, text=f"Scores: {score_count}/20", font=("arial", 20))
+score_label.place(x=1060, y=30)
+
+time_remaining = 60
+timer_label = tk.Label(frame, text=f"Time: {time_remaining}s", font=("arial", 20))
+timer_label.place(x=900, y=30)
+
 keyPressed = []
 canvas.create_rectangle(1400,1, SCREEN_WIDTH, 650, fill="black", tags="PLATFORM")
 canvas.create_rectangle(0,1, SCREEN_WIDTH, 2, fill="black", tags="PLATFORM")
 
 
 
-
-
-
-# -----------------------------------
 
 
 
@@ -203,3 +210,5 @@ window.bind("<KeyPress>", move_player)
 window.resizable(0, 0)
 window.bind("<Key>", start_move)
 window.bind("<KeyRelease>", stop_move)
+
+window.mainloop()
