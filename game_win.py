@@ -85,3 +85,10 @@ board_background_open = Image.open('images/game_win-images/background_score.png'
 board_background_size = board_background_open.resize((340,300))
 show_board_background = ImageTk.PhotoImage(board_background_size)
 canvas.create_image(1140,430,image=show_board_background)
+
+canvas.create_text(600,350,text="Total score: 20 ",font=("Robus", 25, "bold"),fill="white")
+
+
+canvas.create_text(1110,330,text="High score: 20 ",font=("Robus", 22, "bold"),fill="white")
+canvas.create_text(1090,400,text="Medium: 10",font=("Robus", 22, "bold"),fill="white")
+canvas.create_text(1060,470,text="Low: 6 ",font=("Robus", 22, "bold"),fill="white")
