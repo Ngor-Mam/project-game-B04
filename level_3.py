@@ -48,4 +48,14 @@ player_1_size = player_1.resize((100, 130))
 player1 = ImageTk.PhotoImage(player_1_size)
 player = canvas.create_image(50, 530, image=player1)
 
+SCREEN_WIDTH = 1536
+SCREEN_HEIGHT = 864
+GRAVITY_FORCE = 9
+JUMP_FORCE = 30
+SPEED = 5
+TIMED_LOOP = 10
+
+canvas.create_rectangle(0, 600, SCREEN_WIDTH, 650, fill="black", tags="PLATFORM")
+canvas.create_rectangle(1400,1, SCREEN_WIDTH, 650, fill="black", tags="PLATFORM")
+canvas.create_rectangle(0,1, SCREEN_WIDTH, 2, fill="black", tags="PLATFORM")
 window.mainloop()
