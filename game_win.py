@@ -64,3 +64,19 @@ show_button_back_background = ImageTk.PhotoImage(button_back_background_size)
 button_play_background_open = Image.open('images/game_win-images/background_score.png')
 button_play_background_size = star_background_open.resize((340,70))
 show_button_play_background = ImageTk.PhotoImage(button_play_background_size)
+
+def button_back():
+    os.system("python levels_game.py")  # Replace "levels_game.py" with the correct file path if needed
+    window.destroy()
+
+
+button = tk.Button(frame, text="Back", command=button_back, bg="Saddle Brown", fg="white", font=("Arial", 32))
+button.place(x=460, y=550)
+
+def button_retry():
+    os.system("python levels_game.py")  # Replace "levels_game.py" with the correct file path if needed
+    window.destroy()
+
+
+button = tk.Button(frame, text="Retry", command=button_retry, bg="Saddle Brown", fg="white", font=("Arial", 32))
+button.place(x=720, y=550)
