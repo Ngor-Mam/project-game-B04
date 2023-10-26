@@ -28,3 +28,8 @@ def link_main():
 button = tk.Button(frame, text="Back", command=link_main, bg="green", fg="white", font=("bold", 30))
 button.place(x = 30, y = 30)
 windows.resizable(0,0)
+
+text_level = Image.open("images/levels_game-images/level_text.png")
+text_level_size = text_level.resize((520,230))
+show_text_level = ImageTk.PhotoImage(text_level_size)
+canvas.create_image(620,67, image = show_text_level)
