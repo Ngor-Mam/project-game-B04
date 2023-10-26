@@ -75,3 +75,15 @@ stone5= Image.open("images/level-1-images/stone.png")
 stone5_size = stone5.resize((300, 50))
 show_stone5= ImageTk.PhotoImage(stone5_size)
 stone5_size_position = canvas.create_image(1150, 230, image=show_stone5,tags="PLATFORM")
+
+coin_positions = [(300, 480),(350, 480),(400, 480),
+ (500, 320),(550, 320),(600, 320),
+(600, 105),(650, 105),(700, 105),
+(1050, 185),(1100, 185),(1150, 185),(1200, 185),
+(850, 430),(900, 430), (950, 430),(1000, 430),
+(1200, 560),(1250, 560), (1300, 560)
+ ]
+coins = []
+for position in coin_positions:
+    coin = canvas.create_image(position[0], position[1], image=coin1)
+    coins.append(coin)
