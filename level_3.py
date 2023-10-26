@@ -24,10 +24,11 @@ button_back = Image.open('images/level_3-images/button_back.png')
 button_back_size = button_back.resize((70,70))
 btn = ImageTk.PhotoImage(button_back_size)
 canvas.create_image(50,50,image=btn)
+
 def button_click():
     print("Button clicked!")
     window.destroy()
-    os.system("python levels_game.py")  # Replace "animetion.py" with the correct file path if needed
+    os.system("python levels_game.py") 
 button = tk.Button(frame, image=btn, command=button_click,bg="black")
 button.place(x=10, y=10)
 
