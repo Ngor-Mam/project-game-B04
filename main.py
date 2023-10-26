@@ -85,4 +85,9 @@ def animation_player():
     winsound.PlaySound("sounds/levels_game-sound/sound_level_game.wav",winsound.SND_ASYNC)
     window.after(50, animation_player)
 animation_player()
+
+def play_sound():
+    winsound.PlaySound("sounds/main_sounds/show_sound.wav", winsound.SND_FILENAME + winsound.SND_LOOP)
+sound_thread = threading.Thread(target=play_sound)
+sound_thread.start()
 window.mainloop()
