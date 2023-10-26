@@ -73,12 +73,10 @@ stone_five_size = stone_five.resize((200, 180))
 show_stone_five = ImageTk.PhotoImage(stone_five_size)
 canvas.create_image(1250,500, image=show_stone_five, tags="PLATFORM")
 
-# Coin
 coin = Image.open("images/level-1-images/coin.png")
 coin_size = coin.resize((40, 40))
 coin1 = ImageTk.PhotoImage(coin_size)
 
-# Create three coins
 coin_positions = [(100, 200),(150, 200),(200, 200),
  (200, 560),(250, 560), (300, 560),(350, 560),
  (460, 400),(510, 400),(560, 400),
@@ -124,13 +122,11 @@ def jump(force):
             canvas.move(player, 0, -force)
             window.after(TIMED_LOOP, jump, force - 1)
 
-
 def start_move(event):
     if event.keysym not in keyPressed:
         keyPressed.append(event.keysym)
         if len(keyPressed) == 1:
             move()
-
 
 def move():
     if not keyPressed == []:
@@ -157,7 +153,6 @@ def gravity():
         canvas.move(player, 0, GRAVITY_FORCE)
     window.after(TIMED_LOOP, gravity)
 
-
 def stop_move(event):
     global keyPressed
     if event.keysym in keyPressed:
@@ -167,7 +162,6 @@ def stop_move(event):
 def is_overlapping(item1, item2):
     overlap = canvas.find_overlapping(*canvas.bbox(item1))
     return item2 in overlap
-
 
 def countdown():
     global time_remaining
