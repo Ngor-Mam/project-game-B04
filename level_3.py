@@ -24,5 +24,28 @@ button_back = Image.open('images/level_3-images/button_back.png')
 button_back_size = button_back.resize((70,70))
 btn = ImageTk.PhotoImage(button_back_size)
 canvas.create_image(50,50,image=btn)
+def button_click():
+    print("Button clicked!")
+    window.destroy()
+    os.system("python levels_game.py") 
+button = tk.Button(frame, image=btn, command=button_click,bg="black")
+
+board_score = Image.open("images/level_3-images/background_score.png")
+board_score_size = board_score.resize((510,60))
+show_board_score = ImageTk.PhotoImage(board_score_size)
+canvas.create_image(1050,50,image=show_board_score)
+
+time_remaining = 80
+timer_label = tk.Label(frame, text=f"Time: {time_remaining}s", font=("arial", 20))
+timer_label.place(x=900, y=30)
+
+score_count = 0
+score_label = tk.Label(frame, text=f"Scores: {score_count}/20", font=("arial", 20))
+score_label.place(x=1060, y=30)
+
+player_1 = Image.open("images/level-1-images/character.png")
+player_1_size = player_1.resize((100, 130))
+player1 = ImageTk.PhotoImage(player_1_size)
+player = canvas.create_image(50, 530, image=player1)
 
 window.mainloop()
