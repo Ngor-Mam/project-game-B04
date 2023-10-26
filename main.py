@@ -35,5 +35,35 @@ button.place(x = 540, y = 500)
 window.resizable(0,0)
 
 
+character1 = Image.open("images/main-images/big_character.png")
+character_size = character1.resize((360,570))
+show_character1 = ImageTk.PhotoImage(character_size)
+image1_id = canvas.create_image(200,430, image = show_character1)
+
+
+character2 = Image.open("images/main-images/small_character.png")
+character2_size = character2.resize((230,390))
+show_character2 = ImageTk.PhotoImage(character2_size)
+character2_id = canvas.create_image(370,490, image = show_character2)
+
+
+first_coin = Image.open("images/main-images/first_coin.png")
+first_coin_size = first_coin.resize((200,300))
+show_first_coin = ImageTk.PhotoImage(first_coin_size)
+canvas.create_image(1180,250, image = show_first_coin)
+
+second_coin = Image.open("images/main-images/second_coin.png")
+second_coin_size = second_coin.resize((190,390))
+show_second_coin = ImageTk.PhotoImage(second_coin_size)
+second_coin_id = canvas.create_image(1070,400, image = show_second_coin)
+
+
+third_coin = Image.open("images/main-images/second_coin.png")
+third_coin_size = third_coin.resize((190,390))
+show_third_coin = ImageTk.PhotoImage(third_coin_size)
+third_coin_id = canvas.create_image(1190,500, image = show_third_coin)
+
+canvas.create_text(700,100, text="Timely Coin ", font=("Robus",60,"bold"), fill="white")
+canvas.create_text(690,200, text="Chase", font=("Robus",60,"bold"), fill="white")
 
 window.mainloop()
