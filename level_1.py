@@ -36,3 +36,13 @@ def button_back():
 
 button = tk.Button(frame, image=btn, command=button_back,bg="black")
 button.place(x=10, y=10)
+
+board_score = Image.open("images/level_3-images/background_score.png")
+board_score_size = board_score.resize((510,60))
+show_board_score = ImageTk.PhotoImage(board_score_size)
+canvas.create_image(1050,50,image=show_board_score)
+
+player_1 = Image.open("images/level-1-images/character.png")
+player_1_size = player_1.resize((100, 130))
+player1 = ImageTk.PhotoImage(player_1_size)
+player = canvas.create_image(50, 530, image=player1)
