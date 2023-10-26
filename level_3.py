@@ -148,7 +148,7 @@ def move():
                     global score_count
                     score_count += 1
                     score_label.config(text=f"Scores: {score_count}/20")
-                    canvas.delete(coin)  # Hide the coin
+                    canvas.delete(coin) 
     window.after(TIMED_LOOP, move)
 
 
@@ -175,19 +175,14 @@ def countdown():
         time_remaining -= 1
         timer_label.config(text=f"Time: {time_remaining}s")
         window.after(1000, countdown)
-    if score_count == 20:
+        if score_count == 20:
             os.system("python game_win.py")
             window.destroy()
-            print("Level completed!")    
-    # else:
-    #     if score_count == 20:
-    #         os.system("python game_win.py")
-    #         window.destroy()
-    #         print("Level completed!")
-    #     if score_count < 20 and time_remaining==0:
-    #         os.system("python game_over.py")
-    #         window.destroy()
-    #         print("Game Over")    
+            print("Level completed!")
+        if time_remaining == 0:
+            os.system("python game_over.py")
+            window.destroy()
+            print("Game Over")     
 countdown() 
 gravity()
 def move_player(event):
