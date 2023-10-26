@@ -56,3 +56,11 @@ star3_open = Image.open('images/game_win-images/star.png')
 star3_size = star3_open.resize((85,85))
 show_star3 = ImageTk.PhotoImage(star3_size)
 canvas.create_image(780,450,image=show_star3)
+
+button_back_background_open = Image.open('images/game_win-images/star.png')
+button_back_background_size = star_background_open.resize((340,70))
+show_button_back_background = ImageTk.PhotoImage(button_back_background_size)
+
+button_play_background_open = Image.open('images/game_win-images/background_score.png')
+button_play_background_size = star_background_open.resize((340,70))
+show_button_play_background = ImageTk.PhotoImage(button_play_background_size)
