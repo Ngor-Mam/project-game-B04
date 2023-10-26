@@ -48,17 +48,6 @@ player_1_size = player_1.resize((100, 130))
 player1 = ImageTk.PhotoImage(player_1_size)
 player = canvas.create_image(50, 530, image=player1)
 
-SCREEN_WIDTH = 1536
-SCREEN_HEIGHT = 864
-GRAVITY_FORCE = 9
-JUMP_FORCE = 30
-SPEED = 5
-TIMED_LOOP = 10
-
-canvas.create_rectangle(0, 600, SCREEN_WIDTH, 650, fill="black", tags="PLATFORM")
-canvas.create_rectangle(1400,1, SCREEN_WIDTH, 650, fill="black", tags="PLATFORM")
-canvas.create_rectangle(0,1, SCREEN_WIDTH, 2, fill="black", tags="PLATFORM")
-
 stone_first = Image.open('images/level_3-images/stone.png')
 stone_first_size = stone_first.resize((200,140))
 show_stone_first = ImageTk.PhotoImage(stone_first_size)
@@ -101,4 +90,117 @@ coins = []
 for position in coin_positions:
     coin = canvas.create_image(position[0], position[1], image=coin1)
     coins.append(coin)
+
+SCREEN_WIDTH = 1536
+SCREEN_HEIGHT = 864
+GRAVITY_FORCE = 9
+JUMP_FORCE = 30
+SPEED = 5
+TIMED_LOOP = 10
+keyPressed = []
+
+canvas.create_rectangle(0, 600, SCREEN_WIDTH, 650, fill="black", tags="PLATFORM")
+canvas.create_rectangle(1400,1, SCREEN_WIDTH, 650, fill="black", tags="PLATFORM")
+canvas.create_rectangle(0,1, SCREEN_WIDTH, 2, fill="black", tags="PLATFORM")
+
+def check_movement(dx=0, dy=0, checkGround=False):
+    coord = canvas.bbox(player)
+    platforms = canvas.find_withtag("PLATFORM")
+    if coord[0] + dx < 0 or coord[2] + dx > SCREEN_WIDTH:
+        return False
+    if checkGround:
+        overlap = canvas.find_overlapping(coord[0], coord[1], coord[2], coord[3] + dy)
+    else:
+        overlap = canvas.find_overlapping(coord[0] + dx, coord[1] + dy, coord[2] + dx, coord[3])
+    for platform in platforms:
+        if platform in overlap:
+            return False
+    return True
+
+
+def jump(force):
+    if force > 0:
+        if check_movement(0, -force):
+            canvas.move(player, 0, -force)
+            window.after(TIMED_LOOP, jump, force - 1)
+
+
+def start_move(event):
+    if event.keysym not in keyPressed:
+        keyPressed.append(event.keysym)
+        if len(keyPressed) == 1:
+            move()
+
+
+def move():
+    if not keyPressed == []:
+        x = 0
+        if "Left" in keyPressed:
+            x -= SPEED
+        if "Right" in keyPressed:
+            x += SPEED
+        if "space" in keyPressed and not check_movement(0, GRAVITY_FORCE, True):
+            jump(JUMP_FORCE)
+        if check_movement(x):
+            canvas.move(player, x, 0)
+            for i, coin in enumerate(coins):
+                if is_overlapping(player, coin):
+                    global score_count
+                    score_count += 1
+                    score_label.config(text=f"Scores: {score_count}/20")
+                    canvas.delete(coin)  # Hide the coin
+    window.after(TIMED_LOOP, move)
+
+
+def gravity():
+    if check_movement(0, GRAVITY_FORCE, True):
+        canvas.move(player, 0, GRAVITY_FORCE)
+    window.after(TIMED_LOOP, gravity)
+
+
+def stop_move(event):
+    global keyPressed
+    if event.keysym in keyPressed:
+        keyPressed.remove(event.keysym)
+
+
+def is_overlapping(item1, item2):
+    overlap = canvas.find_overlapping(*canvas.bbox(item1))
+    return item2 in overlap
+
+
+def countdown():
+    global time_remaining
+    if time_remaining > 0:
+        time_remaining -= 1
+        timer_label.config(text=f"Time: {time_remaining}s")
+        window.after(1000, countdown)
+    if score_count == 20:
+            os.system("python game_win.py")
+            window.destroy()
+            print("Level completed!")    
+    # else:
+    #     if score_count == 20:
+    #         os.system("python game_win.py")
+    #         window.destroy()
+    #         print("Level completed!")
+    #     if score_count < 20 and time_remaining==0:
+    #         os.system("python game_over.py")
+    #         window.destroy()
+    #         print("Game Over")    
+countdown() 
+gravity()
+def move_player(event):
+    player_coords = canvas.coords(player)
+    if event.keysym == "Left" and player_coords[0] > 30:
+        canvas.move(player, -10, 0)
+    elif event.keysym == "Right" and player_coords[0] < SCREEN_WIDTH - 30:
+        canvas.move(player, 10, 0)
+
+
+window.bind("<KeyPress>", move_player)
+window.resizable(0, 0)
+window.bind("<Key>", start_move)
+window.bind("<KeyRelease>", stop_move)
+   
 window.mainloop()
