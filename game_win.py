@@ -26,3 +26,8 @@ win_text = Image.open('images/game_win-images/text_win.png')
 text_size = win_text.resize((780,350))
 show_text = ImageTk.PhotoImage(text_size)
 canvas.create_image(650,170,image=show_text)
+
+character_open = Image.open('images/game_win-images/character.png')
+character_size = character_open.resize((300,600))
+show_character = ImageTk.PhotoImage(character_size)
+canvas.create_image(200,350,image=show_character)
