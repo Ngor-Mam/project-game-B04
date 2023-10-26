@@ -54,3 +54,11 @@ def play_sound():
     winsound.PlaySound('level_sound/sound_bg2.wav', winsound.SND_FILENAME + winsound.SND_LOOP)
 sound_thread = threading.Thread(target=play_sound)
 sound_thread.start()
+
+def link_levl1():
+    print("Button clicked!")
+    windows.destroy()
+    os.system("python level_1.py") 
+button = tk.Button(frame, text="level One", command=link_levl1, bg="white", fg="black", font=("bold", 20))
+button.place(x = 275, y = 165)
+windows.resizable(0,0)
