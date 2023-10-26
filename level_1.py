@@ -46,3 +46,32 @@ player_1 = Image.open("images/level-1-images/character.png")
 player_1_size = player_1.resize((100, 130))
 player1 = ImageTk.PhotoImage(player_1_size)
 player = canvas.create_image(50, 530, image=player1)
+
+stone1 = Image.open("images/level-1-images/stone.png")
+stone1_size = stone1.resize((300, 50))
+show_stone1 = ImageTk.PhotoImage(stone1_size)
+show_stone1_position = canvas.create_image(350, 525, image=show_stone1,tags="PLATFORM")
+
+
+stone2 = Image.open("images/level-1-images/stone.png")
+stone2_size = stone2.resize((300, 50))
+show_stone2 = ImageTk.PhotoImage(stone2_size)
+show_stone2_position = canvas.create_image(590, 370, image=show_stone2,tags="PLATFORM")
+
+
+
+stone3 = Image.open("images/level-1-images/stone.png")
+stone3_size = stone3.resize((230, 50))
+show_stone3 = ImageTk.PhotoImage(stone3_size)
+show_stone3_position = canvas.create_image(650, 150, image=show_stone3,tags="PLATFORM")
+
+
+stone4 = Image.open("images/level-1-images/stone.png")
+stone4_size = stone4.resize((300, 50))
+show_stone4  = ImageTk.PhotoImage(stone4_size)
+show_stone4_position = canvas.create_image(930, 480, image=show_stone4,tags="PLATFORM")
+
+stone5= Image.open("images/level-1-images/stone.png")
+stone5_size = stone5.resize((300, 50))
+show_stone5= ImageTk.PhotoImage(stone5_size)
+stone5_size_position = canvas.create_image(1150, 230, image=show_stone5,tags="PLATFORM")
