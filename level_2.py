@@ -21,3 +21,15 @@ backgroung_level2 = Image.open('images/level_2-images/background_level2.jpg')
 backgroung_level2_size = backgroung_level2.resize((window_width, window_height))
 show_backgrund_level2 = ImageTk.PhotoImage(backgroung_level2_size)
 canvas.create_image(0, 0, image=show_backgrund_level2,anchor="nw" )
+
+button_back = Image.open('images/level_3-images/button_back.png')
+button_back_size = button_back.resize((70,70))
+btn = ImageTk.PhotoImage(button_back_size)
+canvas.create_image(50,50,image=btn)
+
+def button_back():
+    print("Button clicked!")
+    os.system("python levels_game.py")
+    window.destroy()
+button = tk.Button(frame, image=btn, command=button_back,bg="black")
+button.place(x=10, y=10)
