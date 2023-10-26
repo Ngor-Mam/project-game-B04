@@ -33,3 +33,8 @@ text_level = Image.open("images/levels_game-images/level_text.png")
 text_level_size = text_level.resize((520,230))
 show_text_level = ImageTk.PhotoImage(text_level_size)
 canvas.create_image(620,67, image = show_text_level)
+
+board_instruction = Image.open("images/levels_game-images/borad_instruction.png")
+board_instruction_size = board_instruction.resize((1000,430))
+show_board_instruction = ImageTk.PhotoImage(board_instruction_size)
+canvas.create_image(635,460, image=show_board_instruction)
