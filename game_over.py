@@ -21,3 +21,8 @@ background_over= Image.open('images/game_over-images/background_over_page.png')
 background_over_size = background_over.resize((window_width,window_height))
 show_background_over = ImageTk.PhotoImage(background_over_size)
 canvas.create_image(0,0,image=show_background_over,anchor='nw')
+
+over_text = Image.open('images/game_over-images/game_over_text.png')
+text_size = over_text.resize((650,350))
+show_text = ImageTk.PhotoImage(text_size)
+canvas.create_image(700,170,image=show_text)
