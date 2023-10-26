@@ -36,3 +36,29 @@ score_bg = Image.open('images/game_over-images/background_score.png')
 score_bg_size = score_bg.resize((450,70))
 show_score_bg = ImageTk.PhotoImage(score_bg_size)
 canvas.create_image(690,350,image=show_score_bg)
+
+star_bg = Image.open('images/game_over-images/background_score.png')
+star_bg_size = star_bg.resize((340,70))
+show_star_bg = ImageTk.PhotoImage(star_bg_size)
+canvas.create_image(690,450,image=show_star_bg)
+
+star1 = Image.open('images/game_over-images/star.png')
+star1_size = star1.resize((85,85))
+show_star = ImageTk.PhotoImage(star1_size)
+canvas.create_image(590,450,image=show_star)
+
+def button_back():
+    os.system("python levels_game.py")  # Replace "levels_game.py" with the correct file path if needed
+    window.destroy()
+
+
+button = tk.Button(frame, text="Back", command=button_back, bg="Saddle Brown", fg="white", font=("Arial", 32))
+button.place(x=460, y=550)
+
+def button_retry():
+    os.system("python levels_game.py")  # Replace "levels_game.py" with the correct file path if needed
+    window.destroy()
+
+
+button = tk.Button(frame, text="Retry", command=button_retry, bg="Saddle Brown", fg="white", font=("Arial", 32))
+button.place(x=720, y=550)
