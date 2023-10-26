@@ -38,3 +38,16 @@ board_instruction = Image.open("images/levels_game-images/borad_instruction.png"
 board_instruction_size = board_instruction.resize((1000,430))
 show_board_instruction = ImageTk.PhotoImage(board_instruction_size)
 canvas.create_image(635,460, image=show_board_instruction)
+
+canvas.create_text(450,390, text=".  Count coins and follow time", font=("Robus",15,"bold"), fill="black")
+canvas.create_text(420,430, text=".  lost when caught with", font=("Robus",15,"bold"), fill="black")
+canvas.create_text(360,465, text="   obstacle", font=("Robus",15,"bold"), fill="black")
+canvas.create_text(440,500, text=".  winning when got a lots of", font=("Robus",15,"bold"), fill="black")
+canvas.create_text(440,540, text="   coin before time or on time", font=("Robus",15,"bold"), fill="black")
+
+canvas.create_text(750,390, text=".   Key to play:", font=("Robus",15,"bold"), fill="black")
+canvas.create_text(790,430, text=".   R = go right", font=("Robus",15,"bold"), fill="black")
+canvas.create_text(783,460, text=".   L = go left", font=("Robus",15,"bold"), fill="black")
+canvas.create_text(799,490, text=".   Space = jump", font=("Robus",15,"bold"), fill="black")
+
+#
