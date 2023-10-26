@@ -46,3 +46,11 @@ star1 = Image.open('images/game_over-images/star.png')
 star1_size = star1.resize((85,85))
 show_star = ImageTk.PhotoImage(star1_size)
 canvas.create_image(590,450,image=show_star)
+
+def button_back():
+    os.system("python levels_game.py")  # Replace "levels_game.py" with the correct file path if needed
+    window.destroy()
+
+
+button = tk.Button(frame, text="Back", command=button_back, bg="Saddle Brown", fg="white", font=("Arial", 32))
+button.place(x=460, y=550)
