@@ -42,3 +42,40 @@ canvas.create_image(1050,50,image=show_board_score)
 player_1 = Image.open("images/level-1-images/character.png")
 player_1_size = player_1.resize((100, 130))
 player1 = ImageTk.PhotoImage(player_1_size)
+
+
+
+stone1 = Image.open('images/level_2-images/stone.png')
+stone1_size = stone1.resize((200, 70))
+show_stone1 = ImageTk.PhotoImage(stone1_size)
+canvas.create_image(370,500, image=show_stone1,tags="PLATFORM")
+
+
+stone2 = Image.open('images/level_2-images/stone.png')
+stone2_size = stone2.resize((200, 70))
+show_stone2 = ImageTk.PhotoImage(stone2_size)
+canvas.create_image(810,390, image=show_stone2,tags="PLATFORM")
+
+
+stone3 = Image.open('images/level_2-images/stone.png')
+stone3_size = stone3.resize((200, 70))
+show_stone3 = ImageTk.PhotoImage(stone3_size)
+canvas.create_image(1100,250, image=show_stone3,tags="PLATFORM")
+
+
+stone4 = Image.open('images/level_2-images/stone.png')
+stone4_size = stone4.resize((200, 70))
+show_stone4 = ImageTk.PhotoImage(stone4_size)
+canvas.create_image(1250,500, image=show_stone4,tags="PLATFORM")
+
+
+stone5 = Image.open('images/level_2-images/stone.png')
+stone5_size = stone5.resize((200,70))
+show_stone5 = ImageTk.PhotoImage(stone5_size)
+canvas.create_image(530, 170, image=show_stone5,tags="PLATFORM")
+
+
+stone6 = Image.open('images/level_2-images/stone.png')
+stone6_size = stone6.resize((200,70))
+show_stone6 = ImageTk.PhotoImage(stone6_size)
+canvas.create_image(190, 270, image=show_stone6,tags="PLATFORM")
