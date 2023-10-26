@@ -80,3 +80,8 @@ def button_retry():
 
 button = tk.Button(frame, text="Retry", command=button_retry, bg="Saddle Brown", fg="white", font=("Arial", 32))
 button.place(x=720, y=550)
+
+board_background_open = Image.open('images/game_win-images/background_score.png')
+board_background_size = board_background_open.resize((340,300))
+show_board_background = ImageTk.PhotoImage(board_background_size)
+canvas.create_image(1140,430,image=show_board_background)
