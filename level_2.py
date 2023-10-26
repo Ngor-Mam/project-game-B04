@@ -206,7 +206,8 @@ def move_player(event):
     elif event.keysym == "Right" and player_coords[0] < SCREEN_WIDTH - 30:
         canvas.move(player, 10, 0)
 
-
+canvas.create_rectangle(0,0,1600,10,fill='green',tags='PLATFORM')
+canvas.create_rectangle(0,700,1600,800,fill='green',tags='PLATFORM')
 
 window.bind("<KeyPress>", move_player)
 window.resizable(0, 0)
