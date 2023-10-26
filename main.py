@@ -68,4 +68,21 @@ def button_click_levels():
 button = tk.Button(frame, text="Play Game", command=button_click_levels, bg="white", fg="black", font=("bold", 30),width=10,height=1)
 button.place(x = 540, y = 400)
 window.resizable(0,0)
+
+move_up = True
+def animation_player():
+    global move_up
+    if move_up:
+        canvas.move(image1_id, 0, -5)
+        canvas.move(character2_id, 0, -5)
+        if canvas.coords(image1_id)[1] <= 400:
+            move_up = False
+    else:
+        canvas.move(image1_id, 0, 5)
+        canvas.move(character2_id, 0, 5)
+        if canvas.coords(image1_id)[1] >= 500:
+            move_up = True
+    winsound.PlaySound("sounds/levels_game-sound/sound_level_game.wav",winsound.SND_ASYNC)
+    window.after(50, animation_player)
+animation_player()
 window.mainloop()
