@@ -62,3 +62,22 @@ def button_retry():
 
 button = tk.Button(frame, text="Retry", command=button_retry, bg="Saddle Brown", fg="white", font=("Arial", 32))
 button.place(x=720, y=550)
+
+board_bg_open = Image.open('images/game_over-images/background_score.png')
+board_bg_size = board_bg_open.resize((340,300))
+board_bg_create = ImageTk.PhotoImage(board_bg_size)
+canvas.create_image(1140,430,image=board_bg_create)
+
+#----create text score---
+canvas.create_text(600,350,text="Total score: 6 ",font=("Robus", 25, "bold"),fill="white")
+
+#create text level score--------
+
+canvas.create_text(1110,330,text="High scores: 20",font=("Robus", 22, "bold"),fill="white")
+canvas.create_text(1090,400,text="Medium: 10",font=("Robus", 22, "bold"),fill="white")
+canvas.create_text(1060,470,text="Low: 6",font=("Robus", 22, "bold"),fill="white")
+
+
+
+window.resizable(0,0)
+window.mainloop()
